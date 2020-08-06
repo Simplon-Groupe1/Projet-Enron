@@ -18,6 +18,7 @@ def create_sample (sample_size, number_of_sample) :
 # Counting emails.
 
     mails_count = sum(len(files) for _, _, files in os.walk(mailDir)) 
+    print(f"The maildir folder contains {mails_count} emails.")
 
 # Cleaning the target file.
 
@@ -45,4 +46,4 @@ def create_sample (sample_size, number_of_sample) :
     print (f"OK - {number_of_sample} samples of {sample_size} emails created in target repertory.")
 
 
-create_sample(15, 3)
+create_sample(10000, 1)
