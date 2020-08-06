@@ -31,14 +31,16 @@ def create_sample (sample_size, number_of_sample) :
         if not os.path.exists(sampleDir):
             os.makedirs(sampleDir)
 
-        # We draw random emails and copy them to the sample folder.
+        # Draw random emails and copy them to the sample folder.
         
         random_list = numpy.random.randint(1,mails_count+1,sample_size)
-        id_mail = 0
+        print(len(random_list))
+        id_mail = 1
         for repertory, sub_repertory, files in os.walk(mailDir):
             for f in files :
                 if id_mail in random_list :
                     shutil.copy(os.path.join(repertory, f), sampleDir)
+                    os.rename(os.path.join(sampleDir, f),os.path.join(sampleDir, str(id_mail)))
                 id_mail +=1
         print (f"Creation of the sample {sample} successfully completed.")
         print (f"{sample_size} random mails have been copied to target repertory.")
