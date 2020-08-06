@@ -3,6 +3,7 @@
 import os
 import random
 import shutil
+import numpy
 
 # Creation of a sample of emails among all the emails.
 
@@ -30,15 +31,13 @@ def create_sample (sample_size, number_of_sample) :
             os.makedirs(sampleDir)
 
         # We draw random emails and copy them to the sample folder.
-        random_list = []
-        for n in range(sample_size) :
-            random_list.append(random.randint(0,mails_count))
+        
+        random_list = numpy.random.randint(1,mails_count+1,sample_size)
         id_mail = 0
         for repertory, sub_repertory, files in os.walk(mailDir):
             for f in files :
                 if id_mail in random_list :
                     shutil.copy(os.path.join(repertory, f), sampleDir)
-                    random_list.remove(id_mail)
                 id_mail +=1
         print (f"Creation of the sample {sample} successfully completed.")
         print (f"{sample_size} random mails have been copied to target repertory.")
