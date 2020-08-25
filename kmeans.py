@@ -2,9 +2,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 import numpy as np
 from sklearn.cluster import KMeans
+import csv
+
+csv.field_size_limit(100000000)
 
 #from sklearn.datasets.samples_generator import make_blobs
-import sample.csv[6] as sample
+with open('sample.csv', 'r') as csvfile:
+    sample=[]
+    mail = csv.reader(csvfile, delimiter='|')
+    for message in mail:
+        sample.append(message[6])
+
 
 X, y_true = sample
 plt.scatter(X[:, 0], X[:, 1], s = 50);
