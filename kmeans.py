@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 import numpy as np
+import csv
 from sklearn.cluster import KMeans
 import csv
 
