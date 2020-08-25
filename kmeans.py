@@ -3,18 +3,15 @@ import seaborn as sns; sns.set()
 import numpy as np
 import csv
 from sklearn.cluster import KMeans
-import csv
-
-csv.field_size_limit(100000000)
 
 #from sklearn.datasets.samples_generator import make_blobs
 with open('sample.csv', 'r') as csvfile:
     sample=[]
-    mail = csv.reader(csvfile, delimiter='|')
+    mail = csv.reader(csvfile, delimiter=' ', quotechar='|')
     for message in mail:
-        sample.append(message[6])
+        sample.append(message[0])
 
-
+sample = csv.reader(csvfile, newline='')
 X, y_true = sample
 plt.scatter(X[:, 0], X[:, 1], s = 50);
 #On affiche l'échantillon de base pour avoir une idée du nbr de clusters
