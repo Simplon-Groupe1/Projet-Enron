@@ -1,2 +1,2 @@
 # Projet-Enron
-Open enron.ipynb
+Open mail.ipynb
