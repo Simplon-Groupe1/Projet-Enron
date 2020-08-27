@@ -1,5 +1,8 @@
 __pycache__/
 .ipynb_checkpoints
 .vscode/
+emails.csv
+enron.mbox
 maildir/
 sample/
+sample.csv
