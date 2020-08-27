@@ -35,7 +35,7 @@ def wordFromCSV(src, word):
                 data.append(temp)
                 df = pd.DataFrame(data, columns=['Date',  'From',  'To', 'Cc',  'Bcc',  'Subject', 'Body']) 
 
-    return df.head()
+    return df
 
 def wordFromDF(src, word):
     """Create a dataframe of the mails containing the target word.
@@ -68,4 +68,4 @@ def wordFromDF(src, word):
             data.append(temp)
             df = pd.DataFrame(data, columns=['Date',  'From',  'To', 'Cc',  'Bcc',  'Subject', 'Body']) 
 
-    return df.head()
+    return df
