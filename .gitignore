@@ -3,3 +3,4 @@ pycache/
 .vscode/
 maildir/
 sample/
+emails.csv
